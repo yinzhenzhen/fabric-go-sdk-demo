@@ -69,6 +69,13 @@ func NewCCPackage(chaincodePath string, goPath string) (*resource.CCPackage, err
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println("---------------------------")
+	for _, v := range descriptors {
+		if !strings.Contains(v.name, "vendor") {
+			fmt.Printf("%s-%s \n", v.name, v.fqp)
+		}
+	}
+	fmt.Println("---------------------------")
 	tarBytes, err := generateTarGz(descriptors)
 	if err != nil {
 		return nil, err
