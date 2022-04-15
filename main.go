@@ -9,7 +9,8 @@ import (
 var (
 	//org1Peers = []string{"peer0.org1.example.com"}
 	//org2Peers = []string{"peer0.org2.example.com"}
-	cloudchainOrg1Peers = []string{"peer0.org1.cloudchain-dev-gm.rktl.xyz", "peer1.org1.cloudchain-dev-gm.rktl.xyz", "peer2.org1.cloudchain-dev-gm.rktl.xyz"}
+	//cloudchainOrg1Peers = []string{"peer0.org1.cloudchain-dev-gm.rktl.xyz", "peer1.org1.cloudchain-dev-gm.rktl.xyz", "peer2.org1.cloudchain-dev-gm.rktl.xyz"}
+	cloudchainOrg1Peers = []string{"peer0.org1.cloudchain-dev-gm.rktl.xyz"}
 	//cloudchainOrg2Peers = []string{"peer0.org2.cloudchain-dev-gm.rktl.xyz","peer1.org2.cloudchain-dev-gm.rktl.xyz","peer2.org2.cloudchain-dev-gm.rktl.xyz"}
 )
 
