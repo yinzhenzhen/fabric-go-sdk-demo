@@ -1,0 +1,66 @@
+version: 1.0.0
+
+# 客户端配置
+client:
+  peer:
+    eventService:
+      type: eventhub
+  # 所属org
+  organization: org1
+  # client的日志级别
+  logging:
+    level: info
+  # 密钥文件路径
+  cryptoconfig:
+    path: ${PWD}/crypto-config
+  credentialStore:
+    path: ${PWD}/crypto-config
+    cryptoStore:
+      path: ${PWD}/crypto-config/msp
+  # bccsp
+  BCCSP:
+    security:
+      enabled: true
+      default:
+        provider: "GM"
+      hashAlgorithm: "GMSM3"
+      softVerify: true
+      level: 256
+  # tls证书文件路径
+  tlsCerts:
+    systemCertPool: false
+    client:
+      key:
+        path: ${PWD}/crypto-config/peerOrganizations/org1.cloudchain-dev-gm.rktl.xyz/users/Admin@org1.cloudchain-dev-gm.rktl.xyz/tls/client.key
+      cert:
+        path: ${PWD}/crypto-config/peerOrganizations/org1.cloudchain-dev-gm.rktl.xyz/users/Admin@org1.cloudchain-dev-gm.rktl.xyz/tls/client.crt
+
+# 通道配置
+channels:
+
+# 组织配置
+organizations:
+
+#certificateAuthorities:
+#  ca.beijingnode.bsnbase.com:
+#    url: http://192.168.109.129:7054
+#    # Fabric-CA supports dynamic user enrollment via REST APIs. A "root" user, a.k.a registrar, is
+#    # needed to enroll and invoke new users.
+#    httpOptions:
+#      verify: true
+#    registrar:
+#      enrollId: beijingca
+#      enrollSecret: pl,mko09
+#    # [Optional] The optional name of the CA.
+#    caName: ca.beijingnode.bsnbase.com
+#    tlsCACerts:
+#      # Certificate location absolute path
+#      path: ${PWD}/crypto-config/peerOrganizations/beijingnode.bsnbase.com/users/Admin@beijingnode.bsnbase.com/tls/tlsintermediatecerts/tls-ca-beijingnode-bsnbase-com-2.pem
+
+# orderer配置
+orderers:
+
+# peers配置
+peers:
+
+entityMatchers:

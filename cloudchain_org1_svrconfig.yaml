@@ -1,0 +1,47 @@
+CA:
+  Address:
+  EnrollId:
+  EnrollSecret:
+
+CertPath: /root/go/src/github.com/yinzhenzhen/fabric-go-sdk-demo/crypto-config/
+SDKConfigPath: /root/go/src/github.com/yinzhenzhen/fabric-go-sdk-demo/cloudchain_org1_sdk_config.yaml
+
+PeerOrg:
+  # 组织ID
+  MspID: org1MSP
+  # 组织名称
+  OrgName: org1
+  # 证书的存储目录，可以使用原有的msp的目录，也可以是新的目录，但是需要将Admin的证书放进去
+  KeyStorePath: peerOrganizations/org1.cloudchain-dev-gm.rktl.xyz/users/Admin@org1.cloudchain-dev-gm.rktl.xyz/msp
+  # 组织管理员账号
+  SysUserName: Admin
+  # 是否启用事件
+  Event: false
+  # 节点列表
+  Peers:
+    - Name: peer0.org1.cloudchain-dev-gm.rktl.xyz
+      IP: 192.168.205.4
+      NodePort: 7051
+      EventPort: 7073
+      MspCACerts: peerOrganizations/org1.cloudchain-dev-gm.rktl.xyz/peers/peer0.org1.cloudchain-dev-gm.rktl.xyz/msp
+      TlsCACerts: peerOrganizations/org1.cloudchain-dev-gm.rktl.xyz/peers/peer0.org1.cloudchain-dev-gm.rktl.xyz/tls/ca.crt
+      FabricDataPath:
+
+
+OrdererOrg:
+  MspID: OrdererMSP
+  Orderers:
+    - Name: orderer0.cloudchain-dev-gm.rktl.xyz
+      IP: 192.168.205.4
+      NodePort: 7050
+      TlsCACerts: ordererOrganizations/cloudchain-dev-gm.rktl.xyz/orderers/orderer0.cloudchain-dev-gm.rktl.xyz/tls/ca.crt
+
+    - Name: orderer1.cloudchain-dev-gm.rktl.xyz
+      IP: 192.168.205.4
+      NodePort: 8050
+      TlsCACerts: ordererOrganizations/cloudchain-dev-gm.rktl.xyz/orderers/orderer1.cloudchain-dev-gm.rktl.xyz/tls/ca.crt
+
+    - Name: orderer2.cloudchain-dev-gm.rktl.xyz
+      IP: 192.168.205.4
+      NodePort: 9050
+      TlsCACerts: ordererOrganizations/cloudchain-dev-gm.rktl.xyz/orderers/orderer2.cloudchain-dev-gm.rktl.xyz/tls/ca.crt
